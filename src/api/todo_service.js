@@ -3,29 +3,6 @@ import { Message } from "../component/message.js";
 import { ApiUrls } from "./config.js";
 
 export class TodoService {
-    /**
-     * API 通信を行う関数の作成。
-     */
-
-    /**
-     * GetTodo を呼び出す関数。
-     */
-
-    /**
-     * ManageTodo を呼び出す関数。
-     */
-    static async update(formData) {
-        // サーバーに送信するデータの作成
-        const data = {
-            post_type: formData.post_type,
-            id: formData.id,
-            title: formData.title,
-            detail: formData.detail,
-            deadLine: formData.deadLine,
-            is_done: formData.is_done,
-            is_deleted: formData.is_deleted,
-        };
-    }
 
     static async fetchFromApi(url, options = {}){
         Message.dispose();
@@ -42,6 +19,7 @@ export class TodoService {
                 throw error;
             });
     }
+
     static async getAll() {
         return this.fetchFromApi(ApiUrls.getTodo)
             .then((data) =>
