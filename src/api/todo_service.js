@@ -79,7 +79,7 @@ export class TodoService {
                 */
                 .then(() => {
                     console.log("成功した");
-                    true;
+                    return true;
                 }) // 成功時は true を返却
                 .catch((error) => {
                     console.error("Error updating todo:", error);
