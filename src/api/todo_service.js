@@ -77,7 +77,10 @@ export class TodoService {
                 /* 返却される JSON データ例：
                 * {message: 'Todo is_deleted updated successfully!'}
                 */
-                .then(() => true) // 成功時は true を返却
+                .then(() => {
+                    console.log("成功した");
+                    true;
+                }) // 成功時は true を返却
                 .catch((error) => {
                     console.error("Error updating todo:", error);
                     // エラー時は false を返却
