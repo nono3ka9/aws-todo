@@ -3,7 +3,6 @@ import { Message } from "../component/message.js";
 import { ApiUrls } from "./config.js";
 
 export class TodoService {
-
     static async fetchFromApi(url, options = {}){
         Message.dispose();
 
@@ -19,7 +18,7 @@ export class TodoService {
                 throw error;
             });
     }
-
+    
     static async getAll() {
         return this.fetchFromApi(ApiUrls.getTodo)
             .then((data) =>
