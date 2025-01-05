@@ -3,6 +3,29 @@ import { Message } from "../component/message.js";
 import { ApiUrls } from "./config.js";
 
 export class TodoService {
+    static async update(formData) {
+        const data = {
+            post_type: formData.post_type,
+            id: formData.id,
+            title: formData.title,
+            detail: formData.detail,
+            deadLine: formData.deadLine,
+            is_done: formData.is_done,
+            is_deleted: formData.is_deleted
+        };
+
+        return this.fetchFromApi(ApiUrls.manageTodo, {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(data),
+        })
+            .then(() => true)
+            .catch((error) => {
+                console.error("Error updating todo:", error);
+                return false;
+            });
+    }
+
     static async fetchFromApi(url, options = {}){
         Message.dispose();
 
