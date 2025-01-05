@@ -6,15 +6,10 @@ export class TodoService {
     /**
      * API 通信を行う関数の作成。
      */
-    static async fetchFromApi(url, options = {}) {
-        // 新しいリクエスト前に既存のメッセージを削除
-        Message.dispose();
-    }
 
     /**
      * GetTodo を呼び出す関数。
      */
-    static async getAll() {}
 
     /**
      * ManageTodo を呼び出す関数。
